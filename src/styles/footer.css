@@ -1,0 +1,258 @@
+.kutumba-footer {
+  position: relative;
+  background-color: #f8f8f8;
+  padding: 40px 60px;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.footer-petal {
+  position: absolute;
+  width: 100px;
+  mix-blend-mode: darken;
+  animation: float 6s ease-in-out infinite;
+}
+
+.footer-petal-left {
+  left: 100px;
+  top: 30%;
+}
+
+.footer-petal-right {
+  right: 100px;
+  top: 30%;
+}
+
+.footer-petal-top {
+  right: 25%;
+  top: -40px;
+  animation: none;
+  transform: rotate(150deg);
+  filter: blur(2px);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(70deg);
+  }
+  50% {
+    transform: translateY(15px) rotate(50deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(70deg);
+  }
+}
+
+.kutumba-footer__header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+.kutumba-footer__header .footer-logo {
+  height: 60px;
+}
+
+.footer-header-contact a {
+  text-decoration: none;
+  color: #666666;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 2.5rem;
+}
+
+.footer-header-contact svg {
+  color: var(--primary-color);
+}
+.footer-header-contact:hover svg {
+  animation: ring-ring 0.5s ease-in-out infinite;
+}
+
+@keyframes ring-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(20deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.kutumba-footer__container {
+  display: flex;
+  gap: 40px;
+  max-width: 70%;
+  justify-content: space-around;
+  /* background-color: red; */
+}
+
+.footer-branding {
+  max-width: 40%;
+}
+
+.footer-branding h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.footer-input-wrapper {
+  margin: 16px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #ccc;
+}
+
+.footer-input-wrapper input {
+  border: none;
+  background: transparent;
+  padding: 8px;
+  font-size: 14px;
+  outline: none;
+}
+
+.footer-input-wrapper button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 8px;
+  color: var(--primary-color);
+  font-size: 1.5rem;
+}
+
+.footer-description {
+  font-size: 18px;
+  margin-top: 12px;
+  color: #555;
+}
+
+.footer-contact,
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.footer-contact {
+  max-width: 20%;
+}
+
+.footer-contact h4,
+.footer-social h4 {
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.footer-contact p,
+.footer-contact a,
+.footer-social p,
+.footer-social a {
+  margin: 4px 0;
+  font-size: 18px;
+  color: #444;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-column a:hover {
+  color: var(--primary-color);
+}
+
+.footer-bottom {
+  font-size: 16px;
+  border-top: 1px solid #d8d8d8;
+  padding-top: 10px;
+  color: #777;
+}
+
+.footer-bottom p {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.footer-bottom span {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.footer-bottom a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+.footer-bottom a:hover {
+  color: #aef507;
+}
+
+/* Responsive */
+
+@media (max-width: 1024px) {
+  .kutumba-footer {
+    padding: 40px 20px;
+  }
+  .kutumba-footer__header {
+    justify-content: space-between;
+  }
+  .kutumba-footer__container {
+    max-width: 95%;
+  }
+}
+
+@media (max-width: 800px) {
+  .footer-petal-top {
+    right: 50%;
+  }
+
+  .footer-petal-left {
+    left: auto;
+    right: 90px;
+    top: 20%;
+  }
+
+  .footer-petal-right {
+    right: 100px;
+    bottom: 10%;
+    top: auto;
+  }
+
+  .kutumba-footer__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .kutumba-footer__container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .footer-floating-icon {
+    display: none;
+  }
+
+  .footer-branding,
+  .footer-contact {
+    max-width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  .kutumba-footer__header .footer-logo {
+    height: 50px;
+  }
+  .footer-header-contact a {
+    font-size: 2rem;
+  }
+}
