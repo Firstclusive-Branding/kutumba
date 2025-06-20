@@ -1,0 +1,211 @@
+.about-section {
+  position: relative;
+  background-color: #fff;
+  overflow: hidden;
+  padding: 60px 0;
+}
+
+/* Floating Petals */
+.about-petal {
+  position: absolute;
+  width: 80px;
+  object-fit: contain;
+  opacity: 0.5;
+  pointer-events: none;
+  mix-blend-mode: darken;
+  z-index: 1;
+  animation: petal-float 6s ease-in-out infinite;
+}
+
+.about-petal-1 {
+  top: 5vh;
+  left: 2vw;
+  animation-delay: 0s;
+}
+
+.about-petal-2 {
+  top: 35vh;
+  left: 4vw;
+  animation-delay: 2s;
+}
+
+.about-petal-3 {
+  bottom: 8vh;
+  left: 6vw;
+  animation-delay: 4s;
+}
+
+@keyframes petal-float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Content Layout */
+.about-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+}
+
+/* LEFT SIDE: Text block */
+.about-text {
+  flex: 1 1 auto;
+  padding: 40px;
+  width: clamp(55%, 60%, 65%);
+  margin-left: clamp(5%, 10%, 15%);
+  z-index: 2;
+  color: #333;
+}
+
+.about-heading {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  color: #ca3d7c;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  gap: 10px;
+}
+
+.about-heading span {
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+.about-heading img {
+  width: 32px;
+}
+
+.about-text p {
+  margin-bottom: 16px;
+  font-size: 1.4rem;
+  color: #444;
+  line-height: 1.7;
+}
+
+.about-button {
+  color: #000;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.about-button:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+/* RIGHT SIDE: Image block */
+.about-image {
+  flex: 0 1 auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.about-image img {
+  height: 68vh;
+  width: auto;
+  object-fit: cover;
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+}
+
+@media (max-width: 1472px) {
+  .about-text {
+    width: 100%;
+    margin-left: 2%;
+    padding: 20px;
+  }
+  .about-image {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1 1 100%;
+  }
+
+  .about-image img {
+    height: 70vh;
+    width: 100%;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+    object-fit: cover;
+    display: block;
+  }
+}
+@media (max-width: 1024px) {
+  .about-section {
+    padding-top: 0;
+  }
+  .about-content {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .about-text {
+    width: 90%;
+    margin-left: 0;
+  }
+
+  .about-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .about-image img {
+    height: auto;
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .about-petal-1 {
+    top: unset;
+    bottom: 2vh;
+    left: 5vw;
+    animation-delay: 0s;
+  }
+
+  .about-petal-2 {
+    top: unset;
+    bottom: 4vh;
+    left: 35vw;
+    animation-delay: 2s;
+  }
+
+  .about-petal-3 {
+    top: unset;
+    bottom: 6vh;
+    right: 8vw;
+    left: unset;
+    animation-delay: 4s;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-text {
+    width: 95%;
+  }
+  .about-text p {
+    font-size: 1.2rem;
+  }
+}
